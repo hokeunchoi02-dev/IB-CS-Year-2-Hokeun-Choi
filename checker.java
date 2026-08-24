@@ -25,7 +25,7 @@ public class checker {
       if (num < 0 || num > 255) {
         return false;
       }
-      if (part.length() < 1 && part.charAt(0) == '0') {
+      if (part.length() > 1 && part.charAt(0) == '0') {
         return false;
       }
     }
