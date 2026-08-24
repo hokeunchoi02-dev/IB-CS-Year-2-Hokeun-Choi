@@ -16,7 +16,7 @@ public class checker {
         return false;
       }
       for (int j = 0; j < part.length(); j++) {
-        char c = part.charAt(j)
+        char c = part.charAt(j);
         if (!Character.isDigit(c)) {
           return false;
         }
@@ -29,11 +29,13 @@ public class checker {
         return false;
       }
     }
-    public static void main(String[] args) {
-      checker test1 = new checker("hello");
-      System.out.println(test1.test);
-
-      checker test2 = new checker("192.45.7.201");
-      System.out.println(test2.test);
-    }
+    return true;
   }
+  public static void main(String[] args) {
+    checker test1 = new checker("hello");
+    System.out.println(test1.test);
+
+    checker test2 = new checker("192.45.7.201");
+    System.out.println(test2.test);
+  }
+}
