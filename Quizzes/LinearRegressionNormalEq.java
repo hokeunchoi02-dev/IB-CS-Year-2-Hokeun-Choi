@@ -1,6 +1,6 @@
 public class LinearRegressionNormalEq {
   public static double[][] transpose(double[][] m) {
-    double[][] result = new double[m[o].length][m.length];
+    double[][] result = new double[m[0].length][m.length];
     for (int i = 0; i < m.length; i++) {
       for (int j = 0; j < m[0].length; j++) {
         result[j][i] = m[i][j];
@@ -8,7 +8,7 @@ public class LinearRegressionNormalEq {
     }
     return result;
   }
-  public static double[][] multiply(double[][] a, double b) {
+  public static double[][] multiply(double[][] a, double[][] b) {
     double[][] result = new double[a.length][b[0].length];
     for (int i = 0; i < a.length; i++) {
       for (int j = 0; j < b[0].length; j++) {
@@ -57,13 +57,12 @@ public class LinearRegressionNormalEq {
       {2}, {4}, {5}, {4}, {5}
     };
     double[][] Xt = transpose(X);
-    double XtX = multiply(Xt, X);
-    double XtX_inv = inverse(XtX);
-    double Xty = multiply(Xt, y);
-    double theta = multiply(XtX_inv,Xty);
+    double[][] XtX = multiply(Xt, X);
+    double[][] XtX_inv = inverse(XtX);
+    double[][] Xty = multiply(Xt, y);
+    double[][] theta = multiply(XtX_inv,Xty);
 
     System.out.println("intercept (b) = " + theta[0][0]);
     System.out.println("slope (m) = " + theta[1][0]);
   }
 }
-    
