@@ -26,7 +26,7 @@ public class LinearRegressionNormalEq {
       for (int j = 0; j < n; j++) {
         aug[i][j] = m[i][j];
       }
-      aug[i][n+1] = 1;
+      aug[i][n+i] = 1;
     }
     for (int i = 0; i < n; i++) {
       double pivot = aug[i][i];
@@ -66,3 +66,4 @@ public class LinearRegressionNormalEq {
     System.out.println("slope (m) = " + theta[1][0]);
   }
 }
+    
