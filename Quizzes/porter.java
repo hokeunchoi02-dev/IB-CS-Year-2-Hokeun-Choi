@@ -9,7 +9,7 @@ public class porter {
   }
   public String build() {
     for (int i = 0; i < services.length; i++) {
-      if (servicces[i].equals(service)) {
+      if (services[i].equals(service)) {
         return ip + ":" + ports[i];
       }
     }
@@ -30,7 +30,7 @@ public class porter {
   public static void main(String[] args) {
     porter test1 = new porter("http", "192.45.7.201");
     System.out.println(test1.build());
-    porter test2 = new porter("xbox", 192.45.7.201);
+    porter test2 = new porter("xbox", "192.45.7.201");
     System.out.println(test2.build());
   }
 }
