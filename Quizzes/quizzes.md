@@ -1,4 +1,4 @@
-#Quizzes for CS Year 2
+###Quizzes for CS Year 2
 
 Quiz#1: Create a class that generates a random number between 0 and 256, returns a string.
 ```.java
