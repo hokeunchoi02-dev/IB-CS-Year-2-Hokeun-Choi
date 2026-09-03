@@ -210,3 +210,75 @@ public class filter {//shoul i extend filter from dns?
 
 ## Proof of work:
 <img width="533" height="58" alt="Screenshot 2026-09-03 at 20 25 04" src="https://github.com/user-attachments/assets/476de575-96e0-4abd-91ba-1f3a05bd73a3" />
+
+
+## For Reference(all test cases):
+```.java
+class testEverything {
+    public static void main(String[] args) {
+        // TASK 1
+        System.out.println("===== TASK 1: ranNum =====");
+        ranNum generator = new ranNum();
+        System.out.println(generator.ranNum());
+
+        // TASK 2
+        System.out.println("\n===== TASK 2: IPv4Gen =====");
+        IPv4Gen add = new IPv4Gen();
+        String generatedIp = add.generate();
+        System.out.println(generatedIp);
+
+        // TASK 3
+        System.out.println("\n===== TASK 3: checker =====");
+        checker test1 = new checker("hello");
+        System.out.println(test1.test);
+
+        checker test2 = new checker("192.45.7.201");
+        System.out.println(test2.test);
+
+        // Test Task 2 generated IP
+        checker test3 = new checker(generatedIp);
+        System.out.println("Generated IP valid: " + test3.test);
+
+        // TASK 4
+        System.out.println("\n===== TASK 4: porter =====");
+        porter porter1 = new porter("http", "192.45.7.201");
+        System.out.println(porter1.build());
+
+        porter porter2 = new porter("xbox", "192.45.7.201");
+        System.out.println(porter2.build());
+
+        porter.register("xbox", 3074);
+
+        porter porter3 = new porter("xbox", "192.45.7.201");
+        System.out.println(porter3.build());
+
+        // TASK 5
+        System.out.println("\n===== TASK 5: dns =====");
+
+        dns dns1 = new dns("google.com");
+        System.out.println(dns1.lookup());
+
+        dns dns2 = new dns("jisedu.or.id");
+        System.out.println(dns2.lookup());
+
+        dns.register("jisedu.or.id", "203.0.113.5");
+
+        dns dns3 = new dns("jisedu.or.id");
+        System.out.println(dns3.lookup());
+
+        // TASK 6
+        System.out.println("\n===== TASK 6: filter =====");
+
+        filter filter1 = new filter("127.0.0.1");
+        System.out.println(filter1.check());
+
+        filter filter2 = new filter("time.com");
+        System.out.println(filter2.check());
+
+        filter filter3 = new filter("example.com");
+        System.out.println(filter3.check());
+    }
+}
+```
+## Proof of Work:
+<img width="533" height="466" alt="Screenshot 2026-09-03 at 20 27 25" src="https://github.com/user-attachments/assets/1e787aa7-a949-43e9-81ac-8c573e62d3c0" />
