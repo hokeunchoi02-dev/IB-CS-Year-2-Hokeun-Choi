@@ -124,6 +124,7 @@ public class porter {
 ```
 ## Proof of work:
 <img width="1440" height="900" alt="Screenshot 2026-08-27 at 19 26 21" src="https://github.com/user-attachments/assets/8c58515c-ed17-4a2d-b8c9-8343723c909a" />
+
 ## Task #5:Create a class that uses parallel arrays to store a table of hostnames and their IP addresses.
 ```.java
 public class dns {
@@ -181,5 +182,6 @@ public class dns {
 ```
 ## Proof of work:
 <img width="1087" height="900" alt="Screenshot 2026-09-03 at 18 53 30" src="https://github.com/user-attachments/assets/c382df0d-2c66-40fd-b451-02e7076026f7" />
+
 ## Task #6:Create a class that uses parallel arrays to filter traffic in network using ip/hostnames, assume the DNS:
 
