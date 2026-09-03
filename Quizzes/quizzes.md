@@ -1,55 +1,51 @@
-### Quizzes for CS Year 2
+<img width="389" height="50" alt="Screenshot 2026-09-03 at 20 22 34" src="https://github.com/user-attachments/assets/7a9355a8-d353-4f70-b332-95c4de00e60b" /># Quizzes for CS Year 2
 
 ## Quiz #1: Create a class that generates a random number between 0 and 256, returns a string.
-```.java
+
+```java
 public class ranNum {
   public String ranNum() {
-     int num = (int) (Math.random() * (256 + 1));
+     int num = (int) (Math.random() * (255 + 1));
      return num + "";
   }
-
-  public static void main(String[] args) {
-    ranNum generator = new ranNum();
-    System.out.println(generator.ranNum());
-  }
-}
+}//ask about this before class(Is it really 256? because if I would like to use this code for IPv4Gen.java, using this is not efficient.)
 ```
+
 ## Proof of work:
-<img width="1300" height="721" alt="Screenshot 2026-08-24 at 09 43 24" src="https://github.com/user-attachments/assets/da380ddb-60c1-4304-9535-1ce2c8faec0e" />
+<img width="389" height="50" alt="Screenshot 2026-09-03 at 20 22 42" src="https://github.com/user-attachments/assets/8121c1cf-c46a-45a2-a5d3-244720667403" />
 
 ## Quiz #2: Create a class that generates a valid IPv4 address. You may use the class RanNum()
-```.java
+
+```java
 public class IPv4Gen {
   public String generate() {
-    int a = (int) (Math.random() * 256);
-    int b = (int) (Math.random() * 256);
-    int c = (int) (Math.random() * 256);
-    int d = (int) (Math.random() * 256);
-    return a + "." + b + "." + c + "." + d;
-  }
-  public static void main(String[] args) {
-    IPv4Gen add = new IPv4Gen();
-    System.out.println(add.generate());
+    ranNum generator = new ranNum();
+    return generator.ranNum() + "." + generator.ranNum() + "." + generator.ranNum() + "." + generator.ranNum();
   }
 }
 ```
-## Proof of work:
-<img width="1010" height="518" alt="Screenshot 2026-08-24 at 09 44 10" src="https://github.com/user-attachments/assets/0a086b7f-a6c7-4ee3-8682-a3748ff9a82a" />
 
-## Task #3:Create a class that receives a input String add and it checks for valid IPv4 address.
-```.java
+## Proof of work:
+<img width="389" height="50" alt="Screenshot 2026-09-03 at 20 23 00" src="https://github.com/user-attachments/assets/fcd85048-91f2-4064-ac53-8a82bb8220a1" />
+
+## Task #3: Create a class that receives an input String add and it checks for valid IPv4 address.
+
+```java
 public class checker {
-  private String add;
+  private String add;//do I need to keep this?
   public boolean test;
+
   public checker(String add) {
     this.add = add;
     this.test = isValidIPv4(add);
   }
+
   private boolean isValidIPv4(String s) {
     String[] parts = s.split("\\.");
     if (parts.length != 4) {
       return false;
     }
+
     for (int i = 0; i < parts.length; i++) {
       String part = parts[i];
       if (part.length() == 0) {
@@ -71,30 +67,30 @@ public class checker {
     }
     return true;
   }
-  public static void main(String[] args) {
-    checker test1 = new checker("hello");
-    System.out.println(test1.test);
-
-    checker test2 = new checker("192.45.7.201");
-    System.out.println(test2.test);
-  }
 }
 ```
+
 ## Proof of work:
-<img width="1010" height="533" alt="Screenshot 2026-08-24 at 09 44 28" src="https://github.com/user-attachments/assets/24201da6-ded6-4e91-84e8-5f71ce84ec28" />
+<img width="389" height="58" alt="Screenshot 2026-09-03 at 20 23 33" src="https://github.com/user-attachments/assets/8875f6d3-e1e1-47c8-950b-99da02eff006" />
 
 ## Quiz #4: Create a class receives a service name, ip address and build a ip:port address.
-```.java
+
+```java
 public class porter {
   private static String[] services = {"http", "https", "playstation", "ssh", "ftp", "mysql"};
   private static int[] ports = {80, 443, 3479, 22, 20, 3306};
   private String service;
   private String ip;
+
   public porter(String service, String ip) {
     this.service = service;
     this.ip = ip;
   }
+
   public String build() {
+    if (!new checker(ip).test) {
+      return "invalid ip";//only go to next code when IP is valid
+    }
     for (int i = 0; i < services.length; i++) {
       if (services[i].equals(service)) {
         return ip + ":" + ports[i];
@@ -102,31 +98,30 @@ public class porter {
     }
     return "service not on record table. Use register() to add a new service:port pair";
   }
+
   public static void register(String newService, int newPort) {
     String[] newServices = new String[services.length + 1];
     int[] newPorts = new int[ports.length + 1];
+
     for (int i = 0; i < services.length; i++) {
       newServices[i] = services[i];
       newPorts[i] = ports[i];
     }
+
     newServices[services.length] = newService;
     newPorts[ports.length] = newPort;
     services = newServices;
     ports = newPorts;
   }
-  public static void main(String[] args) {
-    porter test1 = new porter("http", "192.45.7.201");
-    System.out.println(test1.build());
-    porter test2 = new porter("xbox", "192.45.7.201");
-    System.out.println(test2.build());
-  }
 }
 ```
-## Proof of work:
-<img width="1440" height="900" alt="Screenshot 2026-08-27 at 19 26 21" src="https://github.com/user-attachments/assets/8c58515c-ed17-4a2d-b8c9-8343723c909a" />
 
-## Task #5:Create a class that uses parallel arrays to store a table of hostnames and their IP addresses.
-```.java
+## Proof of work:
+<img width="533" height="58" alt="Screenshot 2026-09-03 at 20 23 59" src="https://github.com/user-attachments/assets/50c24a27-e19e-4ca9-bb18-dc67e21266bf" />
+
+## Task #5: Create a class that uses parallel arrays to store a table of hostnames and their IP addresses.
+
+```java
 public class dns {
     private static String[] hostnames = {"localhost", "google.com", "example.com"};
     private static String[] ips       = {"127.0.0.1", "142.250.72.14", "7.7.7.7"};
@@ -147,41 +142,73 @@ public class dns {
     }
 
     public static void register(String newHostname, String newIp) {
-        String[] newHostnames = new String[hostnames.length + 1];
-        String[] newIps       = new String[ips.length + 1];
+        if (new checker(newIp).test) {
+            String[] newHostnames = new String[hostnames.length + 1];
+            String[] newIps = new String[ips.length + 1];
 
-        for (int i = 0; i < hostnames.length; i++) {
-            newHostnames[i] = hostnames[i];
-            newIps[i] = ips[i];
+            for (int i = 0; i < hostnames.length; i++) {
+                newHostnames[i] = hostnames[i];
+                newIps[i] = ips[i];
+            }
+            newHostnames[hostnames.length] = newHostname;
+            newIps[ips.length] = newIp;
+
+            hostnames = newHostnames;
+            ips = newIps;
         }
-        newHostnames[hostnames.length] = newHostname;
-        newIps[ips.length] = newIp;
-
-        hostnames = newHostnames;
-        ips = newIps;
-    }//as it is parallel array, i need to update its size(unlike arraylist)
+    }
+    
     public static String[] getHostnames() {
         return hostnames;
     }
 
     public static String[] getIps() {
-        return ips;
-    }//these getters are for filter.java
-    public static void main(String[] args) {
-        dns test1 = new dns("google.com");
-        System.out.println(test1.lookup());
-      
-        dns test2 = new dns("jisedu.or.id");
-        System.out.println(test2.lookup());
-      
-        dns.register("jisedu.or.id","203.0.113.5");
-        dns test3 = new dns("jisedu.or.id");
-        System.out.println(test3.lookup());
+        return ips;//for filter.java
     }
 }
 ```
+
 ## Proof of work:
-<img width="1087" height="900" alt="Screenshot 2026-09-03 at 18 53 30" src="https://github.com/user-attachments/assets/c382df0d-2c66-40fd-b451-02e7076026f7" />
+<img width="533" height="58" alt="Screenshot 2026-09-03 at 20 24 32" src="https://github.com/user-attachments/assets/673d4c02-624f-4b1a-93ed-a3fae71a0bdf" />
 
-## Task #6:Create a class that uses parallel arrays to filter traffic in network using ip/hostnames, assume the DNS:
+## Task #6: Create a class that uses parallel arrays to filter traffic in network using ip/hostnames, assume the DNS:
 
+```java
+public class filter {//shoul i extend filter from dns?
+    private static String[] whitelist = {"127.0.0.1", "142.250.72.14", "example.com"};
+    private String input;
+
+    public filter(String input) {
+        this.input = input;
+    }
+
+    public String check() {
+        if (new checker(input).test) {
+            String[] hostnames = dns.getHostnames();
+            String[] ips = dns.getIps();
+            for (int i = 0; i < ips.length; i++) {
+                if (ips[i].equals(input)) {
+                    for (int j = 0; j < whitelist.length; j++) {
+                        if (whitelist[j].equals(input) || whitelist[j].equals(hostnames[i])) {
+                            return "accepted ip:" + input + " hostname:" + hostnames[i];
+                        }
+                    }
+                }
+            }
+            return "rejected";
+        } else {
+            dns lookupHelper = new dns(input);
+            String ip = lookupHelper.lookup();
+            for (int i = 0; i < whitelist.length; i++) {
+                if (whitelist[i].equals(input) || whitelist[i].equals(ip)) {
+                    return "accepted with ip:" + ip + " hostname:" + input;
+                }
+            }
+            return "rejected";
+        }
+    }
+}
+```
+
+## Proof of work:
+<img width="533" height="58" alt="Screenshot 2026-09-03 at 20 25 04" src="https://github.com/user-attachments/assets/476de575-96e0-4abd-91ba-1f3a05bd73a3" />
