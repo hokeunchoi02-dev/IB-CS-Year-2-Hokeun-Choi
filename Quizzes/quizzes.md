@@ -1,5 +1,3 @@
-<img width="389" height="50" alt="Screenshot 2026-09-03 at 20 22 34" src="https://github.com/user-attachments/assets/7a9355a8-d353-4f70-b332-95c4de00e60b" /># Quizzes for CS Year 2
-
 ## Quiz #1: Create a class that generates a random number between 0 and 256, returns a string.
 
 ```java
