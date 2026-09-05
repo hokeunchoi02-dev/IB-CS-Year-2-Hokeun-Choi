@@ -282,3 +282,26 @@ class testEverything {
 ```
 ## Proof of Work:
 <img width="533" height="466" alt="Screenshot 2026-09-03 at 20 27 25" src="https://github.com/user-attachments/assets/1e787aa7-a949-43e9-81ac-8c573e62d3c0" />
+
+## Task #7: Create the flow diagram for the method below:
+
+```.java
+public String generateMAC() {
+    Random r = new Random();
+    String[] hex = {"0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"};
+    String mac = "";
+
+    for (int i = 0; i < 6; i++) {
+        int number = r.nextInt(256);
+        int first = number / 16;
+        int second = number % 16;
+        mac += hex[first] + hex[second];
+        if (i < 5) {
+            mac += ":";
+        }
+    }
+    return mac;}
+```
+
+## Proof of Work:
+<img width="516" height="798" alt="Screenshot 2026-09-05 at 20 08 07" src="https://github.com/user-attachments/assets/7f9aeefc-6fd1-439e-a37f-a436838e7545" />
