@@ -345,5 +345,5 @@ public class NAT {
     }
 }
 ```
-##Proof of Work:
+## Proof of Work:
 <img width="731" height="232" alt="Screenshot 2026-09-06 at 20 00 59" src="https://github.com/user-attachments/assets/a061c8a1-356e-408f-a58e-ab1f358edbe4" />
