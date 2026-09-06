@@ -1,6 +1,6 @@
 ## Quiz #1: Create a class that generates a random number between 0 and 256, returns a string.
 
-```java
+```.java
 public class ranNum {
   public String ranNum() {
      int num = (int) (Math.random() * (255 + 1));
@@ -14,7 +14,7 @@ public class ranNum {
 
 ## Quiz #2: Create a class that generates a valid IPv4 address. You may use the class RanNum()
 
-```java
+```.java
 public class IPv4Gen {
   public String generate() {
     ranNum generator = new ranNum();
@@ -28,9 +28,9 @@ public class IPv4Gen {
 
 ## Task #3: Create a class that receives an input String add and it checks for valid IPv4 address.
 
-```java
+```.java
 public class checker {
-  private String add;//do I need to keep this?
+  private String add;
   public boolean test;
 
   public checker(String add) {
@@ -73,7 +73,7 @@ public class checker {
 
 ## Quiz #4: Create a class receives a service name, ip address and build a ip:port address.
 
-```java
+```.java
 public class porter {
   private static String[] services = {"http", "https", "playstation", "ssh", "ftp", "mysql"};
   private static int[] ports = {80, 443, 3479, 22, 20, 3306};
@@ -119,7 +119,7 @@ public class porter {
 
 ## Task #5: Create a class that uses parallel arrays to store a table of hostnames and their IP addresses.
 
-```java
+```.java
 public class dns {
     private static String[] hostnames = {"localhost", "google.com", "example.com"};
     private static String[] ips       = {"127.0.0.1", "142.250.72.14", "7.7.7.7"};
@@ -171,8 +171,8 @@ public class dns {
 
 ## Task #6: Create a class that uses parallel arrays to filter traffic in network using ip/hostnames, assume the DNS:
 
-```java
-public class filter {//shoul i extend filter from dns?
+```.java
+public class filter {
     private static String[] whitelist = {"127.0.0.1", "142.250.72.14", "example.com"};
     private String input;
 
@@ -306,7 +306,8 @@ public String generateMAC() {
 ## Proof of Work:
 <img width="516" height="798" alt="Screenshot 2026-09-05 at 20 08 07" src="https://github.com/user-attachments/assets/7f9aeefc-6fd1-439e-a37f-a436838e7545" />
 
-## Task #8: Create a class NAT that receives a public IP and a size. It should provide a method get_new_trans(String ip, int port) that registers a new private IP:port pair and returns the translated public-facing address.(not sure about actual wordings)
+## Task #8: Create a class that uses parallel arrays to store a NAT table (Network Address Translation)
+
 ```.java
 public class NAT {
 
