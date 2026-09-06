@@ -6,7 +6,7 @@ public class ranNum {
      int num = (int) (Math.random() * (255 + 1));
      return num + "";
   }
-}//ask about this before class(Is it really 256? because if I would like to use this code for IPv4Gen.java, using this is not efficient.)
+}// between 0 and 255 so that I can use ranNum for IPv4Gen
 ```
 
 ## Proof of work:
