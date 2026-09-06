@@ -212,7 +212,7 @@ public class filter {//shoul i extend filter from dns?
 <img width="533" height="58" alt="Screenshot 2026-09-03 at 20 25 04" src="https://github.com/user-attachments/assets/476de575-96e0-4abd-91ba-1f3a05bd73a3" />
 
 
-## For Reference(all test cases):
+## For Reference(all test cases// from task 1 to 6):
 ```.java
 class testEverything {
     public static void main(String[] args) {
@@ -305,3 +305,48 @@ public String generateMAC() {
 
 ## Proof of Work:
 <img width="516" height="798" alt="Screenshot 2026-09-05 at 20 08 07" src="https://github.com/user-attachments/assets/7f9aeefc-6fd1-439e-a37f-a436838e7545" />
+
+## Task #8: Create a class NAT that receives a public IP and a size. It should provide a method get_new_trans(String ip, int port) that registers a new private IP:port pair and returns the translated public-facing address.(not sure about actual wordings)
+```.java
+public class NAT {
+
+    private String[] privateIP;
+    private int[] privatePorts;
+    private int[] translatedPorts;
+
+    private String publicIP;
+    private int count = 0;
+
+    public NAT(String publicIP, int size) {
+        this.publicIP = publicIP;
+
+        privateIP = new String[size];
+        privatePorts = new int[size];
+        translatedPorts = new int[size];
+    }
+
+    public String get_new_trans(String ip, int port) {
+
+        privateIP[count] = ip;
+        privatePorts[count] = port;
+
+        translatedPorts[count] = 10000 + count;
+
+        String result = publicIP + ":" + translatedPorts[count];
+
+        count++;
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+
+        NAT test = new NAT("203.0.113.5", 5);
+
+        System.out.println(test.get_new_trans("192.168.1.10", 5000));
+        System.out.println(test.get_new_trans("192.168.1.20", 6000));
+    }
+}
+```
+##Proof of Work:
+<img width="706" height="165" alt="Screenshot 2026-09-06 at 12 59 00" src="https://github.com/user-attachments/assets/fdd9f880-bf76-4220-9fd3-f3ce469c058c" />
