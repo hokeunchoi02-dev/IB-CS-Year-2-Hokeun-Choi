@@ -310,7 +310,7 @@ public String generateMAC() {
 ```.java
 public class NAT {
 
-    private String[] privateIP;
+    private String[] privateIPs;
     private int[] privatePorts;
     private int[] translatedPorts;
 
@@ -320,33 +320,29 @@ public class NAT {
     public NAT(String publicIP, int size) {
         this.publicIP = publicIP;
 
-        privateIP = new String[size];
+        privateIPs = new String[size];
         privatePorts = new int[size];
         translatedPorts = new int[size];
     }
 
     public String get_new_trans(String ip, int port) {
-
-        privateIP[count] = ip;
+        privateIPs[count] = ip;
         privatePorts[count] = port;
+        translatedPorts[count] = 10001 + count;
 
-        translatedPorts[count] = 10000 + count;
-
-        String result = publicIP + ":" + translatedPorts[count];
-
+        String translation = publicIP + ":" + translatedPorts[count];
         count++;
-
-        return result;
+        return translation;
     }
 
     public static void main(String[] args) {
+        NAT test = new NAT("203.0.113.55", 3);
 
-        NAT test = new NAT("203.0.113.5", 5);
-
-        System.out.println(test.get_new_trans("192.168.1.10", 5000));
-        System.out.println(test.get_new_trans("192.168.1.20", 6000));
+        System.out.println(test.get_new_trans("192.168.1.10", 4500));
+        System.out.println(test.get_new_trans("192.168.1.11", 5100));
+        System.out.println(test.get_new_trans("192.168.1.12", 5100));
     }
 }
 ```
 ##Proof of Work:
-<img width="706" height="165" alt="Screenshot 2026-09-06 at 12 59 00" src="https://github.com/user-attachments/assets/fdd9f880-bf76-4220-9fd3-f3ce469c058c" />
+<img width="731" height="232" alt="Screenshot 2026-09-06 at 20 00 59" src="https://github.com/user-attachments/assets/a061c8a1-356e-408f-a58e-ab1f358edbe4" />
