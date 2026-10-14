@@ -151,4 +151,20 @@ public class Matrix {
 
         return result;
     }
+
+    public int[][] diagonal(int size) {
+        int[][] result = new int[size][size];
+
+        for (int row = 0; row < size; row++) {
+            for (int col = 0; col < size; col++) {
+                if (row == col) {
+                    result[row][col] = row + 1;
+                }
+            }
+        }
+
+        return result;
+    }
+
+    
 }
