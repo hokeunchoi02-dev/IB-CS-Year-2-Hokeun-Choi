@@ -443,5 +443,8 @@ public class Matrix {
 }
 ```
 
-#Proof of Work from Matrix.java:
+## Proof of Work from Matrix.java:
 <img width="932" height="381" alt="Screenshot 2026-10-15 at 13 45 53" src="https://github.com/user-attachments/assets/45031cf9-6744-486c-8a2a-88c88dc69ac4" />
+
+## Files Structure:
+<img width="351" height="900" alt="Screenshot 2026-10-16 at 04 06 53" src="https://github.com/user-attachments/assets/6ffda7b7-670c-4f74-8e4f-04aedcf6e2ab" />
