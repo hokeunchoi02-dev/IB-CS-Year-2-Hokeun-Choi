@@ -83,7 +83,7 @@ public class Matrix {
         for (int row = 0; row < size; row++) {
             for (int col = 0; col < size; col++) {
                 if (row == col) {
-                    identityMatrix[row][col] = 1;
+                    identityMatrix[row][col] = 1;// default value is 0.
                 }
             }
         }
