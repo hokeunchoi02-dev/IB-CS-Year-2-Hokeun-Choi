@@ -121,7 +121,7 @@ public int[] vectorize() {
 }
 ```
 ### Proof of Work:
-<img width="1090" height="900" alt="Screenshot 2026-10-15 at 08 03 24" src="https://github.com/user-attachments/assets/afc6b86a-e275-418a-83ef-ceba1c7e0c62" />
+<img width="1090" height="900" alt="Screenshot 2026-10-15 at 08 13 43" src="https://github.com/user-attachments/assets/953c7137-f552-4b7e-aa25-1d691a156f22" />
 
 ## Task #13: Create a method that receives a 1D array and builds a square matrix, use zero-padded.
 
@@ -133,10 +133,13 @@ public Matrix(int[] numbers) {
 }
 
 public int[][] toMatrix() {
-    int n = (int) Math.ceil(Math.sqrt(numbers.length));
+    int n = 1;
+
+    while (n * n < numbers.length) {
+        n++;
+    }
 
     int[][] result = new int[n][n];
-
     int index = 0;
 
     for (int row = 0; row < n; row++) {
@@ -153,4 +156,31 @@ public int[][] toMatrix() {
 ```
 
 ### Proof of Work:
-<img width="1090" height="900" alt="Screenshot 2026-10-15 at 08 07 10" src="https://github.com/user-attachments/assets/c39af106-199e-4475-b6f4-915c9c6b5f18" />
+<img width="1090" height="900" alt="Screenshot 2026-10-15 at 08 11 05" src="https://github.com/user-attachments/assets/daef4bd9-4afc-41d3-91cc-a97bfa0d4d16" />
+
+## Task #14: Create a method that creates a ascending diagonal matrix
+
+```.java
+public Matrix() {
+}// No-argument constructor for Task 14 (creates a Matrix object without specifying its size)
+public int[][] diagonal(int size) {
+    int[][] result = new int[size][size];
+
+    for (int row = 0; row < size; row++) {
+        for (int col = 0; col < size; col++) {
+            if (row == col) {
+                result[row][col] = row + 1;
+            }
+        }
+    }
+
+    return result;
+}
+```
+
+## Proof of Work:
+<img width="1090" height="900" alt="Screenshot 2026-10-15 at 08 17 31" src="https://github.com/user-attachments/assets/5b818198-69da-4a6a-97ea-d0b18bcfdb73" />
+
+
+## Task #15: Create a method that calculates the error in representation of a ADC with a range 0-5v and resolution 6 bits for and voltage measured from an analog input.
+
