@@ -1,6 +1,6 @@
 ## Task #9: Create a class that receives a 2D array and returns the average across columns and across rows.
 
-```java
+```.java
 public class Matrix {
     private int[][] matrix;
 
@@ -42,7 +42,7 @@ public class Matrix {
 
 ## Task #10: Create a class that receives a 2D array and a integer, returns the array scaled by the constant:
 
-```java
+```.java
 public class Matrix {
     private int[][] matrix;
     public Matrix(int[][] matrix) {
@@ -70,7 +70,7 @@ public class Matrix {
 
 ## Task #11: Create a class that receives a constant n and returns a identity matrix of size n x n :
 
-```java
+```.java
 public class Matrix {
     private int size;
     public Matrix(int size) {
@@ -99,7 +99,7 @@ public class Matrix {
 
 ## Task #12: Create a method that receives a matrix of size n x m: the output is a 1D “vectorized” version of the input.
 
-```java
+```.java
 public class Matrix {
     private int[][] matrix;
     public Matrix(int[][] matrix) {
@@ -127,7 +127,7 @@ public class Matrix {
 
 ## Task #13: Create a method that receives a 1D array and builds a square matrix, use zero-padded.
 
-```java
+```.java
 public class Matrix {
     private int[] numbers;
     
