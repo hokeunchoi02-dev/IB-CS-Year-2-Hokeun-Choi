@@ -211,41 +211,42 @@ public class calculateADCError{
 ## Task #16: Create a method that calculates the minimum number of bits required for an ADC to measure the smallest voltage difference specified in an array of voltage values, given the minimum and maximum input voltage range.
 
 ```.java
-
-public static int calculateResolution(double min, double max, double[] readings) {
-
-    // Step 1: Bubble Sort
-    for (int i = 0; i < readings.length - 1; i++) {
-        for (int j = 0; j < readings.length - 1 - i; j++) {
-            if (readings[j] > readings[j + 1]) {
-                double temp = readings[j];
-                readings[j] = readings[j + 1];
-                readings[j + 1] = temp;
+public class calculateResolution {
+    public static int calculateResolution(double min, double max, double[] readings) {
+    
+        // Step 1: Bubble Sort
+        for (int i = 0; i < readings.length - 1; i++) {
+            for (int j = 0; j < readings.length - 1 - i; j++) {
+                if (readings[j] > readings[j + 1]) {
+                    double temp = readings[j];
+                    readings[j] = readings[j + 1];
+                    readings[j + 1] = temp;
+                }
             }
         }
-    }
-
-    // Step 2: Find the smallest gap
-    double gap = max - min;
-
-    for (int i = 0; i < readings.length - 1; i++) {
-        double diff = readings[i + 1] - readings[i];
-
-        if (diff > 0 && diff < gap) {
-            gap = diff;
+    
+        // Step 2: Find the smallest gap
+        double gap = max - min;
+    
+        for (int i = 0; i < readings.length - 1; i++) {
+            double diff = readings[i + 1] - readings[i];
+    
+            if (diff > 0 && diff < gap) {
+                gap = diff;
+            }
         }
+    
+        // Step 3: Find minimum bits
+        double step = max - min;
+        int result = 0;
+    
+        while (step > gap) {
+            step = step / 2;
+            result++;
+        }
+    
+        return result;
     }
-
-    // Step 3: Find minimum bits
-    double step = max - min;
-    int result = 0;
-
-    while (step > gap) {
-        step = step / 2;
-        result++;
-    }
-
-    return result;
 }
 ```
 
