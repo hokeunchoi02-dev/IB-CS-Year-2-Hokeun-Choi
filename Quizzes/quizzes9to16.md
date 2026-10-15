@@ -122,3 +122,35 @@ public int[] vectorize() {
 ```
 ### Proof of Work:
 <img width="1090" height="900" alt="Screenshot 2026-10-15 at 08 03 24" src="https://github.com/user-attachments/assets/afc6b86a-e275-418a-83ef-ceba1c7e0c62" />
+
+## Task #13: Create a method that receives a 1D array and builds a square matrix, use zero-padded.
+
+```java
+private int[] numbers;
+
+public Matrix(int[] numbers) {
+    this.numbers = numbers;
+}
+
+public int[][] toMatrix() {
+    int n = (int) Math.ceil(Math.sqrt(numbers.length));
+
+    int[][] result = new int[n][n];
+
+    int index = 0;
+
+    for (int row = 0; row < n; row++) {
+        for (int col = 0; col < n; col++) {
+            if (index < numbers.length) {
+                result[row][col] = numbers[index];
+                index++;
+            }
+        }
+    }
+
+    return result;
+}
+```
+
+### Proof of Work:
+<img width="1090" height="900" alt="Screenshot 2026-10-15 at 08 07 10" src="https://github.com/user-attachments/assets/c39af106-199e-4475-b6f4-915c9c6b5f18" />
