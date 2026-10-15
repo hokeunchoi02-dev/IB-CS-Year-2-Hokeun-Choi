@@ -212,7 +212,45 @@ public class calculateADCError{
 
 ```.java
 
+public static int calculateResolution(double min, double max, double[] readings) {
+
+    // Step 1: Bubble Sort
+    for (int i = 0; i < readings.length - 1; i++) {
+        for (int j = 0; j < readings.length - 1 - i; j++) {
+            if (readings[j] > readings[j + 1]) {
+                double temp = readings[j];
+                readings[j] = readings[j + 1];
+                readings[j + 1] = temp;
+            }
+        }
+    }
+
+    // Step 2: Find the smallest gap
+    double gap = max - min;
+
+    for (int i = 0; i < readings.length - 1; i++) {
+        double diff = readings[i + 1] - readings[i];
+
+        if (diff > 0 && diff < gap) {
+            gap = diff;
+        }
+    }
+
+    // Step 3: Find minimum bits
+    double step = max - min;
+    int result = 0;
+
+    while (step > gap) {
+        step = step / 2;
+        result++;
+    }
+
+    return result;
+}
 ```
+
+## Proof of Work:
+<img width="948" height="486" alt="Screenshot 2026-10-15 at 18 38 48" src="https://github.com/user-attachments/assets/ae60526e-abf4-4d84-8a77-9cba423f3bd7" />
 
 ## All Matrix.java(Task 9 to 14):
 ```.java
