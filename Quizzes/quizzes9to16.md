@@ -189,3 +189,20 @@ public int[][] diagonal(int size) {
 
 ## Task #15: Create a method that calculates the error in representation of a ADC with a range 0-5v and resolution 6 bits for and voltage measured from an analog input.
 
+```.java
+public class calculateADCError{
+    public double calculateADCError(double analog) {
+        double step = 5.0 / Math.pow(2, 6);
+
+        double remainder = analog % step;
+
+        double error = Math.min(remainder, step - remainder);
+
+        return error;
+    }
+}
+```
+
+## Proof of Work:
+<img width="494" height="134" alt="Screenshot 2026-10-15 at 08 45 05" src="https://github.com/user-attachments/assets/0257604b-d2b4-4e3f-8be4-9081a249e9a5" />
+<img width="494" height="17" alt="Screenshot 2026-10-15 at 08 45 17" src="https://github.com/user-attachments/assets/a974cb2d-7c70-49e3-a138-eb02b9a70318" />
