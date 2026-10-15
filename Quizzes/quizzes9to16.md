@@ -44,7 +44,8 @@ public class Matrix {
 ```
 
 ### Proof of Work:
-<img width="1085" height="866" alt="Screenshot 2026-10-14 at 20 02 01" src="https://github.com/user-attachments/assets/1adfa085-f881-4e3c-932b-2f95df6c1216" />
+<img width="494" height="346" alt="Screenshot 2026-10-15 at 08 30 50" src="https://github.com/user-attachments/assets/881429cd-6849-426e-94db-b9c5a4f7ed5e" />
+<img width="494" height="69" alt="Screenshot 2026-10-15 at 08 31 07" src="https://github.com/user-attachments/assets/bce7ccfe-59d8-4b0c-9c0b-641d4a3e87b9" />
 
 ## Task #10: Create a class that receives a 2D array and a integer, returns the array scaled by the constant:
 
@@ -74,7 +75,8 @@ public void show(int[][] matrix) {
 ```
 
 ### Proof of Work:
-<img width="1085" height="866" alt="Screenshot 2026-10-14 at 20 10 51" src="https://github.com/user-attachments/assets/8a39e6f3-0b0c-4abe-a866-c46cd2d0dd01" />
+<img width="494" height="242" alt="Screenshot 2026-10-15 at 08 31 26" src="https://github.com/user-attachments/assets/ac13562c-2e2c-4da6-90bf-d9b7900619c9" />
+<img width="494" height="63" alt="Screenshot 2026-10-15 at 08 31 50" src="https://github.com/user-attachments/assets/87f8a15d-f8ae-423b-9303-25ebceba1c8f" />
 
 ## Task #11: Create a class that receives a constant n and returns a identity matrix of size n x n :
 
@@ -100,7 +102,8 @@ public int[][] identity() {
 ```
 
 ### Proof of Work:
-<img width="1090" height="900" alt="Screenshot 2026-10-15 at 07 57 47" src="https://github.com/user-attachments/assets/4ba90db5-b5f7-4234-8942-0e12b89f7da4" />
+<img width="494" height="128" alt="Screenshot 2026-10-15 at 08 32 04" src="https://github.com/user-attachments/assets/dbb8bcb2-c33f-4633-b1b0-82cbd4e36e5c" />
+<img width="494" height="57" alt="Screenshot 2026-10-15 at 08 32 21" src="https://github.com/user-attachments/assets/bb05a146-3758-4f77-8f56-920af5891583" />
 
 ## Task #12: Create a method that receives a matrix of size n x m: the output is a 1D “vectorized” version of the input.
 
@@ -121,7 +124,8 @@ public int[] vectorize() {
 }
 ```
 ### Proof of Work:
-<img width="1090" height="900" alt="Screenshot 2026-10-15 at 08 13 43" src="https://github.com/user-attachments/assets/953c7137-f552-4b7e-aa25-1d691a156f22" />
+<img width="494" height="149" alt="Screenshot 2026-10-15 at 08 32 37" src="https://github.com/user-attachments/assets/1a8d8600-4d46-4055-9156-8d4cd6de544c" />
+<img width="494" height="30" alt="Screenshot 2026-10-15 at 08 32 52" src="https://github.com/user-attachments/assets/ff552d7a-740c-4198-8b1a-5c792996db4b" />
 
 ## Task #13: Create a method that receives a 1D array and builds a square matrix, use zero-padded.
 
@@ -156,7 +160,8 @@ public int[][] toMatrix() {
 ```
 
 ### Proof of Work:
-<img width="1090" height="900" alt="Screenshot 2026-10-15 at 08 11 05" src="https://github.com/user-attachments/assets/daef4bd9-4afc-41d3-91cc-a97bfa0d4d16" />
+<img width="494" height="182" alt="Screenshot 2026-10-15 at 08 33 07" src="https://github.com/user-attachments/assets/01498da6-2a5d-4934-b8f6-49a411a42549" />
+<img width="494" height="73" alt="Screenshot 2026-10-15 at 08 33 22" src="https://github.com/user-attachments/assets/8047e333-4cc5-4579-9dec-d5ec7f3cc2f6" />
 
 ## Task #14: Create a method that creates a ascending diagonal matrix
 
@@ -179,8 +184,8 @@ public int[][] diagonal(int size) {
 ```
 
 ## Proof of Work:
-<img width="1090" height="900" alt="Screenshot 2026-10-15 at 08 17 31" src="https://github.com/user-attachments/assets/5b818198-69da-4a6a-97ea-d0b18bcfdb73" />
-
+<img width="494" height="127" alt="Screenshot 2026-10-15 at 08 33 41" src="https://github.com/user-attachments/assets/e4b5cd08-8688-4e6a-ba73-df409bd364cb" />
+<img width="494" height="73" alt="Screenshot 2026-10-15 at 08 33 57" src="https://github.com/user-attachments/assets/3b3ef63d-1e58-4a9b-a3f9-0d1943d98c20" />
 
 ## Task #15: Create a method that calculates the error in representation of a ADC with a range 0-5v and resolution 6 bits for and voltage measured from an analog input.
 
