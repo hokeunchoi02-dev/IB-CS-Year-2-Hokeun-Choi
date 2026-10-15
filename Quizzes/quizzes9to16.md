@@ -442,9 +442,96 @@ public class Matrix {
     }
 }
 ```
+## MatrixMain.java:
+```.java
 
-## Proof of Work from Matrix.java:
+public class MatrixMain {
+    public static void main(String[] args) {
+
+        // ==================== Task 9 ====================
+        System.out.println("===== Task 9: Row and Column Average =====");
+
+        int[][] numbers9 = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        Matrix test9 = new Matrix(numbers9);
+
+        double[] rowAvg = test9.rowAverage();
+        double[] colAvg = test9.columnAverage();
+
+        System.out.println("Row Average:");
+        test9.show(rowAvg);
+
+        System.out.println("Column Average:");
+        test9.show(colAvg);
+
+
+        // ==================== Task 10 ====================
+        System.out.println("===== Task 10: Scale Matrix =====");
+
+        int[][] numbers10 = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        int scale = 3;
+        Matrix test10 = new Matrix(numbers10);
+        int[][] scaled_matrix = test10.scale(scale);
+        test10.show(scaled_matrix);
+
+
+        // ==================== Task 11 ====================
+        System.out.println("===== Task 11: Identity Matrix =====");
+
+        int size11 = 3;
+        Matrix test11 = new Matrix(size11);
+        int[][] i_matrix = test11.identity();
+        test11.show(i_matrix);
+
+
+        // ==================== Task 12 ====================
+        System.out.println("===== Task 12: Vectorize =====");
+
+        int[][] numbers12 = {
+            {1, 2, 3, 3},
+            {4, 5, 6, 6},
+            {7, 8, 9, 9}
+        };
+
+        Matrix test12 = new Matrix(numbers12);
+        int[] vectorized_matrix = test12.vectorize();
+        test12.show(vectorized_matrix);
+
+
+        // ==================== Task 13 ====================
+        System.out.println("===== Task 13: To Matrix =====");
+
+        int[] numbers13 = {
+            1, 2, 3, 3, 4, 5, 6, 6, 7, 8
+        };
+
+        Matrix test13 = new Matrix(numbers13);
+        int[][] into_matrix13 = test13.toMatrix();
+        test13.show(into_matrix13);
+
+
+        // ==================== Task 14 ====================
+        System.out.println("===== Task 14: Ascending Diagonal Matrix =====");
+
+        int size14 = 4;
+        Matrix test14 = new Matrix();
+        int[][] into_matrix14 = test14.diagonal(size14);
+        test14.show(into_matrix14);
+    }
+}
+```
+
+## Proof of Work from MatrixMain.java:
 <img width="932" height="381" alt="Screenshot 2026-10-15 at 13 45 53" src="https://github.com/user-attachments/assets/45031cf9-6744-486c-8a2a-88c88dc69ac4" />
 
-## Files Structure:
+## File Structure:
 <img width="351" height="900" alt="Screenshot 2026-10-16 at 04 06 53" src="https://github.com/user-attachments/assets/6ffda7b7-670c-4f74-8e4f-04aedcf6e2ab" />
