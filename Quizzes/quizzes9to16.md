@@ -62,7 +62,63 @@ public int[][] scale(int scale) {
 
     return result;
 }
+
+public void show(int[][] matrix) {
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = 0; col < matrix[row].length; col++) {
+                System.out.print(matrix[row][col] + " ");
+            }
+            System.out.println();
+        }
+    }
 ```
 
 ### Proof of Work:
 <img width="1085" height="866" alt="Screenshot 2026-10-14 at 20 10 51" src="https://github.com/user-attachments/assets/8a39e6f3-0b0c-4abe-a866-c46cd2d0dd01" />
+
+## Task #11: Create a class that receives a constant n and returns a identity matrix of size n x n :
+
+```java
+private int size;
+public Matrix(int size) {
+    this.size = size;
+}
+
+public int[][] identity() {
+    int[][] identityMatrix = new int[size][size];
+
+    for (int row = 0; row < size; row++) {
+        for (int col = 0; col < size; col++) {
+            if (row == col) {
+                identityMatrix[row][col] = 1;
+            }
+        }
+    }
+
+    return identityMatrix;
+}
+```
+
+### Proof of Work:
+<img width="1090" height="900" alt="Screenshot 2026-10-15 at 07 57 47" src="https://github.com/user-attachments/assets/4ba90db5-b5f7-4234-8942-0e12b89f7da4" />
+
+## Task #12: Create a method that receives a matrix of size n x m: the output is a 1D “vectorized” version of the input.
+
+```java
+public int[] vectorize() {
+    int[] result = new int[matrix.length * matrix[0].length];
+
+    int index = 0;
+
+    for (int row = 0; row < matrix.length; row++) {
+        for (int col = 0; col < matrix[row].length; col++) {
+            result[index] = matrix[row][col];
+            index++;
+        }
+    }
+
+    return result;
+}
+```
+### Proof of Work:
+<img width="1090" height="900" alt="Screenshot 2026-10-15 at 08 03 24" src="https://github.com/user-attachments/assets/afc6b86a-e275-418a-83ef-ceba1c7e0c62" />
