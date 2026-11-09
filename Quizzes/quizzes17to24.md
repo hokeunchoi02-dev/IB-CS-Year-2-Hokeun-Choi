@@ -39,7 +39,7 @@ These outliers can be removed or capped so that the model does not learn from un
 Input validation checks every record using a format check (e.g. dates written as YYYY-MM-DD), a domain check (e.g. the subject must be in the school's subject list) and a value check (e.g. an IB grade must be between 1 and 7).
 This removes incorrect data, because a model trained on errors learns those errors and makes poor predictions.
 Duplicate records, such as a student entered twice after changing classes, are removed so that the model is not biased towards over-represented students.
-Missing grades are identified and handled using mean imputation or by removing incomplete records where appropriate. This ensures that missing values do not cause errors during model training.
+Missing grades, such as records unavailable for students who transferred mid-year, are identified and handled using mean imputation or by removing incomplete records where appropriate. This ensures that missing values do not cause errors during model training.
 
 ## Quiz #23: A university is preparing an ML model for admission purposes using a dataset containing 50 different metrics from applicants. Explain how dimensionality reduction techniques could be used in this context. [6]
 
@@ -51,7 +51,7 @@ Alternatively, PCA (Principal Component Analysis) can combine related metrics, s
 Using fewer features reduces overfitting, so the model makes reliable decisions about new applicants instead of memorizing past applicants.
 It also reduces the data storage and processing time needed to train the model, which matters when the university receives thousands of applications.
 
-## Quiz #24: Explain why k-fold corss validation is used with the k-nntechnique [3]
+## Quiz #24: Explain why k-fold cross-validation is used with the k-NN technique [3]
 
 ## Proof of work:
 K-fold cross-validation divides the dataset into k equal folds and evaluates the model k times, each time using a different fold as the test set and the remaining folds as the training set, so every data point across the whole dataset is used for testing exactly once.
