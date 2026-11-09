@@ -39,7 +39,7 @@ These outliers can be removed or capped so that the model does not learn from un
 Input validation checks every record using a format check (e.g. dates written as YYYY-MM-DD), a domain check (e.g. the subject must be in the school's subject list) and a value check (e.g. an IB grade must be between 1 and 7).
 This removes incorrect data, because a model trained on errors learns those errors and makes poor predictions.
 Duplicate records, such as a student entered twice after changing classes, are removed so that the model is not biased towards over-represented students.
-Missing grades from students who transferred are removed or filled using mean imputation, so that the data set is complete and consistent for training.
+Missing grades are identified and handled using mean imputation or by removing incomplete records where appropriate. This ensures that missing values do not cause errors during model training.
 
 ## Quiz #23: A university is preparing an ML model for admission purposes using a dataset containing 50 different metrics from applicants. Explain how dimensionality reduction techniques could be used in this context. [6]
 
