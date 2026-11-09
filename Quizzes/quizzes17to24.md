@@ -50,3 +50,10 @@ A wrapper method can then train the model on different subsets of the remaining 
 Alternatively, PCA (Principal Component Analysis) can combine related metrics, such as several different test scores, into a smaller number of new features.
 Using fewer features reduces overfitting, so the model makes reliable decisions about new applicants instead of memorizing past applicants.
 It also reduces the data storage and processing time needed to train the model, which matters when the university receives thousands of applications.
+
+## Quiz #24: Explain why k-fold corss validation is used with the k-nntechnique [3]
+
+## Proof of work:
+K-fold cross-validation divides the dataset into k equal folds and evaluates the model k times, each time using a different fold as the test set and the remaining folds as the training set, so every data point across the whole dataset is used for testing exactly once.
+Averaging the k results gives a more reliable estimate of how well the K-NN model performs on unseen data than a single train/test split, so it shows whether the model works for the general dataset rather than only for one particular split.
+This helps avoid overfitting, because each possible number of neighbours (k) is evaluated with cross-validation and the value with the highest average accuracy is chosen, rather than a very small k that fits the noise in the training data.
